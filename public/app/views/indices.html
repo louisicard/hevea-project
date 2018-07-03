@@ -1,0 +1,35 @@
+<h1>{{ $parent.trans('indices.title') }}</h1>
+<div ng-if="isLoading">
+  <div class="loader-wrapper"><div class="loader"></div></div>
+</div>
+<div class="indices-table widget" ng-if="!isLoading">
+  <div class="widget-title">{{ $parent.trans('indices.list.title') }}</div>
+  <div class="widget-actions">
+    <a href="{{ basePath }}indices/add" class="fa fa-plus" aria-hidden="true"></a>
+    <i ng-click="fetchData()" class="fa fa-refresh" aria-hidden="true"></i>
+  </div>
+  <div class="widget-content">
+    <table>
+      <thead>
+      <tr>
+        <th>{{ $parent.trans('indices.list.indexName') }}</th>
+        <th>{{ $parent.trans('indices.list.mapping') }}</th>
+        <th>{{ $parent.trans('indices.list.size') }}</th>
+        <th>{{ $parent.trans('indices.crud.numberOfShards') }}</th>
+        <th>{{ $parent.trans('indices.crud.numberOfReplicas') }}</th>
+        <th>{{ $parent.trans('indices.list.creationDate') }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="(indexName, data) in indices">
+        <td><a href="{{ basePath }}indices/edit/{{ indexName }}">{{ indexName }}</a></td>
+        <td class="nowrap"><span ng-bind-html="displayMappingInformation(data.mappings)"></span><span class="edit-link" ng-if="getMappingNames(data.mappings).length <= 1"><a href="{{ basePath }}mapping/edit/{{ indexName }}">Editer</a></span></td>
+        <td>{{ formatSize(data.total.store.size_in_bytes) }}</td>
+        <td>{{ data.settings.index.number_of_shards }}</td>
+        <td>{{ data.settings.index.number_of_replicas }}</td>
+        <td>{{ formatDate(data.settings.index.creation_date) }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+test_route:
+    path:     /test
+    controller: App\Controller\TestController::testAction
+rest_info:
+    path:     /rest/info
+    controller: App\Controller\DashboardController::infoRestAction
+rest_indices:
+    path:     /rest/indices
+    controller: App\Controller\IndicesController::listIndicesAction
+rest_indices_get:
+    path:     /rest/indices/{indexName}
+    controller: App\Controller\IndicesController::getIndexAction
+rest_indices_put:
+    path:     /rest/index/put
+    controller: App\Controller\IndicesController::putIndexAction
+    methods:    [PUT]
+rest_indices_delete:
+    path:     /rest/indices/{indexName}/delete
+    controller: App\Controller\IndicesController::deleteIndexAction
+    methods:    [DELETE]
+login:
+    path:     /login
+    controller: App\Controller\SecurityController::loginAction
+logout:
+    path:     /logout
+    controller: App\Controller\SecurityController::logoutAction
+homepage:
+    path:     /{params}
+    requirements:
+      params: ".*"
+    defaults:
+      params: ""
+    controller: App\Controller\DefaultController::indexAction

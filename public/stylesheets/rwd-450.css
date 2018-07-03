@@ -1,0 +1,97 @@
+.menu-toggle-wrapper {
+  display:block;
+}
+aside#main-menu {
+  width: 100%;
+  transition: all 0.3s ease;
+  background:#fff;
+  position: absolute;
+  top:3rem;
+  height:auto;
+  left:0;
+  z-index:1;
+  border-right:none;
+  display:none;
+}
+aside#main-menu.collapsed {
+  display:block;/*In smartphone mode menu is displayed only when toggler is activated (opposite to normal mode)*/
+  width:100%;
+}
+body main {
+  margin-left: 0;
+  width: 100%;
+}
+body header figure {
+  margin-right:0.8rem;
+}
+body header figure figcaption {
+  display:none;
+}
+aside#main-menu #main-nav > ul > li > a,
+aside#main-menu.collapsed #main-nav > ul > li > a {
+  overflow:hidden;
+  color: #333;
+}
+aside#main-menu > nav > ul > li > ul,
+aside#main-menu.collapsed > nav > ul > li > ul {
+  position:relative;
+  display:none;
+  max-height:none;
+  width:100%;
+  right:0;
+  top:0;
+  background:none;
+  border:none;
+}
+aside#main-menu.collapsed > nav > ul > li > ul.active {
+  display:block;
+}
+aside#main-menu > nav > ul > li:hover > ul {
+  display:block;
+}
+aside#main-menu > nav > ul > li > ul > li {
+  margin-left:1rem;
+}
+body.menu-collapsed main {
+  margin-left:0;
+}
+#dashboard-container{
+  display:block;
+}
+#dashboard-container .aside {
+  min-width: 0;
+  margin:1rem 0 1rem 0;
+  padding-left:0;
+}
+#dashboard-container .aside .version,
+#dashboard-container .aside .health {
+  background: #3fbb9b;
+  color:#fff;
+  padding:1.5rem 0 1.5rem 9rem;
+  position:relative;
+  border-radius: 4px;
+  font-size:1.2rem;
+  height:6rem;
+}
+#login-container {
+  max-width:none;
+  background:#fff;
+  margin:0;
+  padding:2rem;
+  border:none;
+  border-radius:0;
+}
+body[ng-controller="SecurityController"] {
+  background:#fff;
+}
+#login-container form label {
+  width:100%;
+  float:none;
+  margin:0.5rem 0;
+  display:block;
+  text-align: left;
+}
+#login-container form .form-widget {
+  width:100%;
+  float:none;
+}

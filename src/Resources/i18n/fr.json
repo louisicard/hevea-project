@@ -1,0 +1,92 @@
+{
+  "login": {
+    "title": "Connexion au serveur Hevea",
+    "badCredentials": "L'authentification a échoué",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "signIn": "Connexion"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "datastudio": {
+      "title": "Data studio",
+      "indices": "Liste des index",
+      "datasources": "Sources de données",
+      "matchingLists": "Matrices d'alignement",
+      "processChains": "Chaînes de traitement"
+    },
+    "search": "Recherche",
+    "tools": "Outils",
+    "admin": "Admin",
+    "logout": "Déconnexion"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "serverInformation": "Informations du serveur",
+    "clusterName": "Nom du cluster",
+    "clusterUUID": "UUID du cluster",
+    "numberOfNodes": "Nombre de nœuds",
+    "numberOfDataNodes": "Nombre de nœuds de données",
+    "activePrimaryShards": "Nombre de shards primaires actifs",
+    "activeShards": "Nombre de shards actifs",
+    "indices": "Nombre d'index",
+    "version": "Version",
+    "status": "Statut",
+    "status_red": "Rouge",
+    "status_yellow": "Jaune",
+    "status_green": "Vert"
+  },
+  "indices": {
+    "title": "Liste des index",
+    "list": {
+      "title": "Liste des index",
+      "indexName": "Nom de l'index",
+      "size": "Taille",
+      "bytes": "o",
+      "kiloBytes": "Ko",
+      "megaBytes": "Mo",
+      "gigaBytes": "Go",
+      "creationDate": "Date de création",
+      "mapping": "Mapping"
+    },
+    "edit": {
+      "title": "Modification de l'index %indexName%",
+      "settings": "Paramètres de l'index"
+    },
+    "add": {
+      "title": "Création d'un nouvel index"
+    },
+    "crud": {
+      "indexName": "Nom de l'index",
+      "numberOfShards": "Nombre de shards",
+      "numberOfReplicas": "Nombre de réplications",
+      "analysisJSON": "Définition de l'analyse (JSON)"
+    },
+    "delete": {
+      "dialogTitle": "Suppression d'un index",
+      "confirm": "Vous êtes sur le point de supprimer l'index \"%indexName%\". Souhaitez-vous poursuivre ?"
+    }
+  },
+  "form": {
+    "validation": {
+      "required": "Ce champ est requis.",
+      "number": "Ce champ doit contenir un nombre valide.",
+      "min": "Ce champ doit être un nombre supérieur ou égal à %number%.",
+      "json": "La syntaxe JSON est incorrecte."
+    }
+  },
+  "dialog": {
+    "error": "Une erreur est intervenue",
+    "serverError": "Le serveur a rencontré une erreur: %text%",
+    "ok": "OK",
+    "cancel": "Annuler",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "mapping": {
+    "title": "Edition du mapping de l'index %indexName%",
+    "settings": "Paramètres du mapping",
+    "multipleMappings": "L'index contient plusieurs mappings. L'édition est donc impossible. Veuillez recréer un index avec un seul mapping.",
+    "mappingName": "Nom du mapping"
+  }
+}

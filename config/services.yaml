@@ -28,3 +28,17 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+    hevea_elasticsearch_server:
+      class: App\Helpers\ElasticsearchServer
+      arguments: ["%env(ELASTICSEARCH_SERVER_URL)%", "@security.password_encoder"]
+      public: true
+    hevea_user_provider:
+      class: App\Classes\UserProvider
+      arguments: ["@hevea_elasticsearch_server"]
+    App\Helpers\i18nHelper:
+      arguments: ["%env(LOCALE)%"]
+    hevea_i18n_helper:
+      alias: App\Helpers\i18nHelper
+      public: true

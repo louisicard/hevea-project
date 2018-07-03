@@ -1,0 +1,49 @@
+<h1 ng-bind-html-unsafe>{{ pageTitle }}</h1>
+<div ng-if="isLoading">
+  <div class="loader-wrapper"><div class="loader"></div></div>
+</div>
+<div class="mapping-edit widget" ng-if="!isLoading">
+  <div class="widget-title">{{ $parent.trans('mapping.settings') }}</div>
+  <div class="widget-content">
+    <form novalidate class="simple-form" name="mappingForm" ng-if="mapping != null">
+      <div class="form-item">
+        <label for="mappingName">{{ $parent.trans('mapping.mappingName') }}</label>
+        <input type="text" id="mappingName" name="mappingName" ng-model="mappingName" ng-disabled="editMode" required="required" />
+        <div ng-show="mappingForm.mappingName.$invalid && (mappingForm.mappingName.$touched || mappingForm.$submitted)" class="error-msg">{{ $parent.trans('form.validation.required') }}</div>
+      </div>
+      <div class="form-table">
+        <div class="label">Mapping fields</div>
+        <table>
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Format</th>
+            <th>Analysis</th>
+            <th>Include raw</th>
+            <th>Subfields</th>
+            <th>Store</th>
+            <th>Boost</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="(fieldName, field) in mapping.properties">
+            <td>{{ fieldName }}</td>
+            <td>{{ field.type }}</td>
+            <td>{{ field.format }}</td>
+            <td>{{ field.analyzer != null ? 'Analyzed (' + field.analyzer + ')' : 'Not analyzed' }}</td>
+            <td>{{ field.fields.raw != null ? 'Yes' : 'No' }}</td>
+            <td>
+              <ul ng-if="getSubfieldNames(fieldName).length > 0">
+                <li ng-repeat="subfieldName in getSubfieldNames(fieldName)">{{ subfieldName }}</li>
+              </ul>
+            </td>
+            <td>{{ field.store ? 'Yes' : 'No' }}</td>
+            <td>{{ field.boost }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>

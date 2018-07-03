@@ -1,0 +1,19 @@
+{
+  "name": "hevea",
+  "description": "Hevea project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "vendor",
+    "web/assets/vendor"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-material": "^1.1.5",
+    "angular-route": "^1.6.6",
+    "angular-resource": "^1.6.6",
+    "angular-sanitize": "^1.6.7",
+    "jquery": "3.*"
+  }
+}

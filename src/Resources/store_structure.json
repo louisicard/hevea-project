@@ -1,0 +1,43 @@
+{
+  "index": {
+    "analysis": {
+      "analyzer": {
+        "case_insensitive_sort": {
+          "filter": [
+            "lowercase"
+          ],
+          "tokenizer": "keyword"
+        },
+        "transliterator": {
+          "filter": [
+            "standard",
+            "asciifolding",
+            "lowercase"
+          ],
+          "tokenizer": "keyword"
+        }
+      }
+    }
+  },
+  "mapping" : {
+    "data": {
+      "type": "text",
+      "store": true
+    },
+    "name": {
+      "type": "text",
+      "store": true,
+      "fields": {
+        "raw": {
+          "type": "keyword",
+          "store": true
+        }
+      },
+      "analyzer": "case_insensitive_sort"
+    },
+    "type": {
+      "type": "keyword",
+      "store": true
+    }
+  }
+}

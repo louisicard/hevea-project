@@ -1,0 +1,45 @@
+<h1 ng-bind-html-unsafe>{{ pageTitle }}</h1>
+<div ng-if="isLoading">
+  <div class="loader-wrapper"><div class="loader"></div></div>
+</div>
+<div class="index-edit widget" ng-if="!isLoading">
+  <div class="widget-title">{{ $parent.trans('indices.edit.settings') }}</div>
+  <div class="widget-content">
+    <form novalidate class="simple-form" name="indexForm">
+      <div class="form-item">
+        <label for="indexName">{{ $parent.trans('indices.crud.indexName') }}</label>
+        <input type="text" id="indexName" name="indexName" ng-model="indexName" ng-disabled="editMode" required="required" />
+        <div ng-show="indexForm.indexName.$invalid && (indexForm.indexName.$touched || indexForm.$submitted)" class="error-msg">{{ $parent.trans('form.validation.required') }}</div>
+      </div>
+      <div class="form-item">
+        <label for="numberOfShards">{{ $parent.trans('indices.crud.numberOfShards') }}</label>
+        <input type="number" id="numberOfShards" name="numberOfShards" ng-model="index.number_of_shards" ng-disabled="editMode" required="required" ng-min="1" />
+        <div ng-show="indexForm.numberOfShards.$error.required && (indexForm.numberOfShards.$touched || indexForm.$submitted)" class="error-msg">{{ $parent.trans('form.validation.required') }}</div>
+        <div ng-show="indexForm.numberOfShards.$error.min" class="error-msg">{{ $parent.trans('form.validation.min', {number: "1"}) }}</div>
+        <div ng-show="indexForm.numberOfShards.$error.number && (indexForm.numberOfShards.$touched || indexForm.$submitted)" class="error-msg">{{ $parent.trans('form.validation.number') }}</div>
+      </div>
+      <div class="form-item">
+        <label for="numberOfReplicas">{{ $parent.trans('indices.crud.numberOfReplicas') }}</label>
+        <input type="number" id="numberOfReplicas" name="numberOfReplicas" ng-model="index.number_of_replicas" ng-disabled="editMode" required="required" ng-min="1" />
+        <div ng-show="indexForm.numberOfReplicas.$error.required && (indexForm.numberOfReplicas.$touched || indexForm.$submitted)" class="error-msg">{{ $parent.trans('form.validation.required') }}</div>
+        <div ng-show="indexForm.numberOfReplicas.$error.min" class="error-msg">{{ $parent.trans('form.validation.min', {number: "1"}) }}</div>
+        <div ng-show="indexForm.numberOfReplicas.$error.number && (indexForm.numberOfReplicas.$touched || indexForm.$submitted)" class="error-msg">{{ $parent.trans('form.validation.number') }}</div>
+      </div>
+      <div class="form-item">
+        <label for="analysisJSON">{{ $parent.trans('indices.crud.analysisJSON') }}</label>
+        <textarea json-text id="analysisJSON" name="analysisJSON" ng-model="index.analysis" ng-disabled="editMode" required="required"></textarea>
+        <div ng-show="indexForm.analysisJSON.$error.json" class="error-msg">{{ $parent.trans('form.validation.json') }}</div>
+      </div>
+      <div class="form-actions">
+        <div class="submit-wrapper" ng-class="submitting ? 'spinning' : 'not-spinning'" ng-if="!editMode">
+          <div class="button-spinner"></div>
+          <input type="submit" value="Valider" ng-click="submit(indexForm)" />
+        </div>
+        <div class="remove-wrapper" ng-class="deleting ? 'spinning' : 'not-spinning'" ng-if="editMode">
+          <div class="button-spinner"></div>
+          <button class="delete-button" ng-click="deleteIndex()">Supprimer</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

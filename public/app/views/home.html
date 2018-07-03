@@ -1,0 +1,47 @@
+<h1>{{ $parent.trans('dashboard.title') }}</h1>
+<div ng-if="infoData" id="dashboard-container">
+  <div class="info-table widget">
+    <div class="widget-title">{{ $parent.trans('dashboard.serverInformation') }}</div>
+    <div class="widget-content">
+      <table>
+        <tbody>
+        <tr>
+          <th>{{ $parent.trans('dashboard.clusterName') }}</th>
+          <td>{{ infoData.server_info.cluster_name}}</td>
+        </tr>
+        <tr>
+          <th>{{ $parent.trans('dashboard.clusterUUID') }}</th>
+          <td>{{ infoData.server_info.cluster_uuid }}</td>
+        </tr>
+        <tr>
+          <th>{{ $parent.trans('dashboard.numberOfNodes') }}</th>
+          <td>{{ infoData.health.number_of_nodes}}</td>
+        </tr>
+        <tr>
+          <th>{{ $parent.trans('dashboard.numberOfDataNodes') }}</th>
+          <td>{{ infoData.health.number_of_data_nodes}}</td>
+        </tr>
+        <tr>
+          <th>{{ $parent.trans('dashboard.activePrimaryShards') }}</th>
+          <td>{{ infoData.health.active_primary_shards}}</td>
+        </tr>
+        <tr>
+          <th>{{ $parent.trans('dashboard.activeShards') }}</th>
+          <td>{{ infoData.health.active_shards}}</td>
+        </tr>
+        <tr>
+          <th>{{ $parent.trans('dashboard.indices') }}</th>
+          <td>{{ infoData.stats.indices.count }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="aside">
+    <div class="version">{{ $parent.trans('dashboard.version') }}: {{ infoData.server_info.version.number}}</div>
+    <div class="health status-{{ infoData.health.status }}">{{ $parent.trans('dashboard.status') }}: {{ $parent.trans('dashboard.status_' + infoData.health.status) }}</div>
+  </div>
+</div>
+<div ng-if="isLoading">
+  <div class="loader-wrapper"><div class="loader"></div></div>
+</div>

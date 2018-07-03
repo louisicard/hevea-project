@@ -5,3 +5,9 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+/.idea/
+/public/assets/vendor/
+/composer.lock
+/symfony.lock
+/.env

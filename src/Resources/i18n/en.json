@@ -1,0 +1,92 @@
+{
+  "login": {
+    "title": "Sign in to Hevea server",
+    "badCredentials": "Authentication as failed",
+    "username": "Username",
+    "password": "Password",
+    "signIn": "Sign in"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "datastudio": {
+      "title": "Data studio",
+      "indices": "Indexes",
+      "datasources": "Datasources",
+      "matchingLists": "Matching lists",
+      "processChains": "Process chains"
+    },
+    "search": "Search",
+    "tools": "Tools",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "serverInformation": "Server information",
+    "clusterName": "Cluster name",
+    "clusterUUID": "Cluster UUID",
+    "numberOfNodes": "Number of nodes",
+    "numberOfDataNodes": "Number of data nodes",
+    "activePrimaryShards": "Active primary shards",
+    "activeShards": "Active shards",
+    "indices": "Indexes",
+    "version": "Version",
+    "status": "Status",
+    "status_red": "Red",
+    "status_yellow": "Yellow",
+    "status_green": "Green"
+  },
+  "indices": {
+    "title": "Indexes",
+    "list": {
+      "title": "List of indexes",
+      "indexName": "Index name",
+      "size": "Size",
+      "bytes": "B",
+      "kiloBytes": "KB",
+      "megaBytes": "MB",
+      "gigaBytes": "GB",
+      "creationDate": "Creation date",
+      "mapping": "Mapping"
+    },
+    "edit": {
+      "title": "Edit index %indexName%",
+      "settings": "Index settings"
+    },
+    "add": {
+      "title": "Create new index"
+    },
+    "crud": {
+      "indexName": "Index name",
+      "numberOfShards": "Number of shards",
+      "numberOfReplicas": "Number of replicas",
+      "analysisJSON": "Analysis definition (JSON)"
+    },
+    "delete": {
+      "dialogTitle": "Deleting an index",
+      "confirm": "You are about to delete the index \"%indexName%\". Do you confirm?"
+    }
+  },
+  "form": {
+    "validation": {
+      "required": "This field is required.",
+      "number": "This field expects a valid number.",
+      "min": "This field expects a number greater than or equal to %number%.",
+      "json": "JSON syntax is incorrect."
+    }
+  },
+  "dialog": {
+    "error": "An error has occurred",
+    "serverError": "Server has encountered an error: %text%",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "mapping": {
+    "title": "Edit mapping of index %indexName%",
+    "settings": "Mapping settings",
+    "multipleMappings": "The index contains motre than 1 mapping. It is then impossible to edit. Please create a new index with onlyn one mapping.",
+    "mappingName": "Mapping name"
+  }
+}
